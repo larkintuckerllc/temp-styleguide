@@ -2,6 +2,6 @@ language: node_js
 node_js: lts/*
 before_install:
   - npm install -g lerna
-install: true
+install:
   - cd ./client && lerna bootstrap --hoist && cd ..
 script: echo "script"
