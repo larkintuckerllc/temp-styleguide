@@ -1,10 +1,15 @@
 language: node_js
 node_js: lts/*
 before_install:
-  - npm install -g lerna
+- npm install -g lerna
 install:
-  - cd ./client && lerna bootstrap --hoist && cd ..
+- cd ./client && lerna bootstrap --hoist && cd ..
 script:
-  - cd ./client && lerna run build && cd ..
-  - cd ./client && lerna run test && cd ..
-  - cd ./client && lerna run coverage && cd ..
+- cd ./client && lerna run build && cd ..
+- cd ./client && lerna run test && cd ..
+- cd ./client && lerna run coverage && cd ..
+deploy:
+  skip_cleanup: true
+  provider: firebase
+  token:
+    secure: Qy2Z4kgU6wM0/j1tk2pQJVxw/wVQq0V9goK4o+lTdVcr3+qfQUf62H3ckDejewX7zoYhRVC5d4qSEM2Pw4hWJ6mSXBbaQI/GMA8KdTt8Mw0NMoUWQJ1hPvjDLZdmVNwOwnFVK/DNYN+bYPjm8BIg8baEGBgSb8RkUbqhS/qddcuYV/0srCQrzV423hJCkX2uB4YqW1FMt2QIdlMS3vOdvP2rw7pX8zXAwRyI9zkSpAQzgkk3fbY6q5jNxuFhbT0dIyscHX3Ix2k1YVg753IVXEm9voixusMZAUZgmCBJnUuKmI32oY+J3/0MDE5wLvTjxxUcIHEDymGfJ64RED9PNGLH6/u5d1baBwZIysy/0Q1Yr+HckvFft8QzaM7Atgu2ON5GO51XBz+l23n3opWYkm1YzjU/jAArm+9VMGq6deojd1T7jInWYzOZZGorafvPonftCUznbEjwrEITTBsU3rGFZLD7f8UYMzVxdbIojZ+YA2XrcyHyaFMVGPSz/KmuhVgtXulmlLwJ2FYbEEUk8chqAGtbeIh5QJaultJf1zgx7ANlapWHnj2GiYocttB4wu8E20eb+qpAzIeEmJH+ATOuBlcY4dQyQbtRZ7hZqWEbYc1gd8LLC0hxIjVan5yX3ZHwuyFzRbOdpi0X7m5tANV4XlL+y3/GMVGHM3ruUX8=
