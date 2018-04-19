@@ -4,6 +4,7 @@ before_install:
   - npm install -g lerna
 install:
   - cd ./client && lerna bootstrap --hoist && cd ..
+script:
+  - cd ./client && lerna run build && cd ..
   - cd ./client && lerna run test && cd ..
   - cd ./client && lerna run coverage && cd ..
-script: echo "script"
